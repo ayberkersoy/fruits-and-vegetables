@@ -27,10 +27,6 @@ class FoodCollection
     {
         $result = [];
 
-        if (!in_array($unit, QuantityType::getTypes())) {
-            throw new \InvalidArgumentException('Invalid unit');
-        }
-
         foreach ($this->foods as $food) {
             if ($search && !str_contains($food->getName(), $search)) {
                 continue;
